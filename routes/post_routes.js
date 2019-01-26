@@ -8,7 +8,7 @@ const {
     getPosts 
 } = require('../actions/post')
 
-module.exports = function(app) {
+module.exports = function (app) {
     app.post('/api/posts', checkJWT, async (req, res) => {
         try {
             const new_post = await createPost(req.user._id, req.body)

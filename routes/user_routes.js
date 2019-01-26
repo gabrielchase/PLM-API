@@ -3,7 +3,7 @@ const { changeUserPassword, updateUser, getUser } = require('../actions/user')
 const { checkIfUserIsAdmin, checkUser } = require('../middlewares')
 const { success, fail } = require('../lib/json_wrappers')
 
-module.exports = function(app) {
+module.exports = function (app) {
     app.post('/api/auth/login', async (req, res) => {
         try {
             const auth_credentials = await loginUser(req.body)

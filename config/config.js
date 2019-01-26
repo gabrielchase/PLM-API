@@ -9,6 +9,7 @@ try {
     config.SALT_ROUNDS = process.env.SALT_ROUNDS || config_file.SALT_ROUNDS
     config.JWT_SECRET = process.env.JWT_SECRET || config_file.JWT_SECRET
     config.JWT_EXPIRATION = process.env.JWT_EXPIRATION || config_file.JWT_EXPIRATION
+    config.MAIL_RECIPIENT = process.env.MAIL_RECIPIENT || config_file.MAIL_RECIPIENT
 } catch (err) {
     console.log('Failed to load configuration file', err.message)
 }   

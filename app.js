@@ -23,6 +23,7 @@ seedAdminUser()
 
 require('./routes/user_routes')(app)
 require('./routes/post_routes')(app)
+require('./routes/mail_routes')(app)
 
 app.listen(config.PORT, () => {
     console.log(`Server running on ${config.PORT}`)

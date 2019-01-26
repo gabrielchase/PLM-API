@@ -1,0 +1,7 @@
+{
+    "DB_URL": "mongodb://heroku_jzwf63dp:8jo9oagisu25om5e72uh47k4lp@ds243295.mlab.com:43295/heroku_jzwf63dp",
+    "SALT_ROUNDS": 10,
+    "JWT_SECRET": "jwt_secret",
+    "JWT_EXPIRATION": "1d",
+    "MAIL_RECIPIENT": "gchase.patron@gmail.com"
+}

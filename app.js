@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 const config = require('./config/config')
+console.log(config)
 const { seedAdminUser } = require('./lib/db_seeds')
 
 mongoose.connect(config.DB_URL, { useNewUrlParser: true })

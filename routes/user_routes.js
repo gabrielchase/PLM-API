@@ -1,5 +1,5 @@
 const { registerUser, loginUser } = require('../actions/auth')
-const { changeUserPassword, updateUser } = require('../actions/user')
+const { changeUserPassword, updateUser, getUser } = require('../actions/user')
 const { checkIfUserIsAdmin, checkUser } = require('../middlewares')
 const { success, fail } = require('../lib/json_wrappers')
 
@@ -17,6 +17,16 @@ module.exports = function(app) {
         try {
             const new_user = await registerUser(req.body)
             success(res, new_user)
+        } catch (err) {
+            fail(res, err)
+        }
+    })
+
+    app.get('/api/user/:user_id', async (req, res) => {
+        const { user_id } = req.params
+        try {
+            const user = await getUser(user_id)
+            success(res, user)
         } catch (err) {
             fail(res, err)
         }

@@ -5,13 +5,12 @@ const nodemailer = require('nodemailer')
 const transporter = nodemailer.createTransport({ 
     service: 'gmail',
     auth: {
-        user: 'gchase.patron@gmail.com',
-        pass: 'Django2.01'
+        user: 'gchasemailer@gmail.com',
+        pass: 'kobe0824'
     }
 })
 
 let mail_options = {
-    from: 'plm_app@gmail.com', 
     to: MAIL_RECIPIENT
 }
 

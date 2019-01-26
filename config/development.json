@@ -4,5 +4,5 @@
     "SALT_ROUNDS": 10,
     "JWT_SECRET": "jwt_secret",
     "JWT_EXPIRATION": "1d",
-    "MAIL_RECIPIENT": "gchase.patron@gmail.com"
+    "MAIL_RECIPIENT": "gchasemailer@gmail.com"
 }

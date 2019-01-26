@@ -22,16 +22,6 @@ module.exports = function(app) {
         }
     })
 
-    app.get('/api/user/:user_id', async (req, res) => {
-        const { user_id } = req.params
-        try {
-            const user = await getUser(user_id)
-            success(res, user)
-        } catch (err) {
-            fail(res, err)
-        }
-    })
-
     app.put('/api/user/:user_id', checkUser, async (req, res) => {
         const { user_id } = req.params
         try {
@@ -51,6 +41,16 @@ module.exports = function(app) {
                 success(res)
             else 
                 throw new Error('Change password failed')
+        } catch (err) {
+            fail(res, err)
+        }
+    })
+
+    app.get('/api/user/:user_id', async (req, res) => {
+        const { user_id } = req.params
+        try {
+            const user = await getUser(user_id)
+            success(res, user)
         } catch (err) {
             fail(res, err)
         }

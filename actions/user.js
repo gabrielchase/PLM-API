@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const User = require('../models/User')
 const { SALT_ROUNDS } = require('../config/config')
 const { comparePassword } = require('./auth')
-const { updatedUserJson } = require('../lib/json_wrappers')
+const { userInfoJson } = require('../lib/json_wrappers')
  
 async function changeUserPassword(user_id, { old_password, new_password, confirm_password }) {
     if (new_password !== confirm_password) {
@@ -31,10 +31,16 @@ async function updateUser(user_id, { email, username, full_name }) {
         { email, username, full_name, modified_on: new Date() },
         { new: true }
     )
-    return updatedUserJson(updated_user)
+    return userInfoJson(updated_user)
+}
+
+async function getUser(user_id) {
+    const user = await User.findById(user_id)
+    return userInfoJson(user)
 }
 
 module.exports = {
     changeUserPassword,
-    updateUser
+    updateUser,
+    getUser
 }
